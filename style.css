@@ -146,7 +146,7 @@ body{
   border-radius: 50%;
   overflow: hidden;
   padding: 5px; 
-  background: linear-gradient(135deg, #0ef, #eb39ce); /* Purple to Blue */
+  background: linear-gradient(135deg, #0ef, #eb39ce);
   box-shadow:
     0 0 15px #70c5fa,
     0 0 25px #649fff,

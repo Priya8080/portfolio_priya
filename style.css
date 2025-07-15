@@ -270,8 +270,25 @@ section{
 .heading1{
     text-align: center;
     text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 50px;
 }
-
+.box{
+    font-size: 23px;
+}
+.Technical-box .box{
+    margin-top: 40px 0;
+}
+.Technical-box .box:first-child{
+    margin-top: 0;
+}
+.Technical-box .box:last-child{
+    margin-bottom: 0;
+}
+.Technical-box .box .info{
+    margin-bottom: 5px;
+}
 
 
 

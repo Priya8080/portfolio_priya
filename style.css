@@ -145,7 +145,8 @@ body{
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  padding: 5px; 
+  padding: 10px; 
+  margin-left: 3rem;
   background: linear-gradient(135deg, #0ef, #eb39ce);
   box-shadow:
     0 0 15px #70c5fa,
@@ -256,6 +257,7 @@ body{
 .services-list div:hover {
     transform: translateY(-10px);
 }
+
 
 
 

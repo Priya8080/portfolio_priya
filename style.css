@@ -322,6 +322,21 @@ section{
 .progress-line.html span{
     width: 90%;
 }
+.progress-line.css span{
+    width: 90%;
+}
+.progress-line.js span{
+    width: 90%;
+}
+.progress-line.react span{
+    width: 90%;
+}
+.progress-line.php span{
+    width: 90%;
+}
+.progress-line.java span{
+    width: 90%;
+}
 
 
 

@@ -319,6 +319,9 @@ section{
     transform: scaleX(0);
     transform-origin: left;
 }
+.progress-line.html span{
+    width: 90%;
+}
 
 
 

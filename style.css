@@ -329,7 +329,7 @@ section{
     width: 85%;
 }
 .progress-line.react span{
-    width: 90%;
+    width: 50%;
 }
 .progress-line.php span{
     width: 90%;

@@ -9,6 +9,9 @@ body{
     color: #ededed;
     background: #081b29;
 }
+html {
+  scroll-behavior: smooth;
+}
 .header{
     position: fixed;
     top: 0;
@@ -159,7 +162,6 @@ body{
   width: 100%;
   border-radius: 50%;
   display: block;
-  padding-bottom: 20%;
   max-width: 630px;
   height: auto;
 }
@@ -211,7 +213,7 @@ body{
     background-color: transparent;
     padding: 40px;
     font-size: 13px;
-    font-weight: 13px;
+    font-weight: 400;
     border-right: 10px;
     border-radius: 20px;
     transition: background 0.5s, transform 0.5s;
@@ -335,7 +337,20 @@ section{
     width: 75%;
 }
 .progress-line.java span{
-    width: 90%;
+    width: 55%;
+}
+.progress-line span::after{
+    content: attr(data-percent);
+    position: absolute;
+    padding: 1px 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
 }
 
 

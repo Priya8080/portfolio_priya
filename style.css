@@ -377,42 +377,38 @@ section{
 /* }  */ 
 
 .progress-line {
+  position: relative;
+  margin-bottom: 30px;
   height: 10px;
   width: 100%;
-  background-color: #ccc;
-  position: relative;
+  background: #333;
   border-radius: 5px;
-  overflow: hidden;
-  margin-top: 20px;
+  overflow: visible;  /* 👈 Important: Tooltip ko cut hone se bachata hai */
 }
 
 .progress-line span {
-  height: 100%;
   display: block;
+  height: 100%;
+  width: 90%;
   background: #f9532d;
-  border-radius: 5px;
   position: relative;
+  border-radius: 5px;
 }
 
 .progress-line span::after {
   content: attr(data-percent);
   position: absolute;
-  padding: 2px 6px;
-  background-color: #000;
-  color: #fff;
-  font-size: 12px;
-  border-radius: 4px;
-  top: -28px;
+  top: -30px;
   right: 0;
+  background: #f9532d;
+  color: white;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 4px;
   white-space: nowrap;
-  opacity: 0;
-  animation: fadeIn 0.5s 1s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  z-index: 10; /* 👈 Tooltip hamesha upar dikhne ke liye */
 }
 
 

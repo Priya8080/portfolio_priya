@@ -344,7 +344,7 @@ section{
     width: 55%;
 } */
 
-.progress-line {
+ /* .progress-line {
   height: 10px;
   width: 100%;
   background-color: #ccc;
@@ -370,12 +370,50 @@ section{
     border-radius: 3px;
     top: -28px;
     /* right: -20px; */
-    right: 0;
+    /* right: 0;
     animation: showText 0.5s 1.5s linear forwards;
     /* opacity: 0; */
-    white-space: nowrap;
+    /* white-space: nowrap;
+/* }  */ 
+
+.progress-line {
+  height: 10px;
+  width: 100%;
+  background-color: #ccc;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
 }
 
+.progress-line span {
+  height: 100%;
+  display: block;
+  background: #f9532d;
+  border-radius: 5px;
+  position: relative;
+}
+
+.progress-line span::after {
+  content: attr(data-percent);
+  position: absolute;
+  padding: 2px 6px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 4px;
+  top: -28px;
+  right: 0;
+  white-space: nowrap;
+  opacity: 0;
+  animation: fadeIn 0.5s 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
 
 
 

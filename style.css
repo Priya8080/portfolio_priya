@@ -375,6 +375,50 @@ section{
     /* opacity: 0; */
     /* white-space: nowrap;
 /* }  */ 
+.box {
+  margin-bottom: 30px;
+}
+
+.progress-line {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  background: #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow: visible; /* important */
+}
+
+.progress-line span {
+  display: block;
+  height: 100%;
+  position: relative;
+  border-radius: 5px;
+  background: #e34c26; /* default */
+}
+
+.progress-line.html span { background: #e34c26; }
+.progress-line.css span { background: #264de4; }
+.progress-line.js span { background: #f7df1e; }
+.progress-line.react span { background: #61DBFB; }
+.progress-line.php span { background: #8892be; }
+.progress-line.java span { background: #f89820; }
+
+.progress-line span::after {
+  content: attr(data-percent);
+  position: absolute;
+  top: -25px;
+  right: 0;
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 1;
+}
+
 
 
 

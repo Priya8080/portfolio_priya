@@ -330,37 +330,6 @@ section{
     transform: scaleX(0);
     transform-origin: left;
 }
- /* .progress-line {
-  height: 10px;
-  width: 100%;
-  background-color: #ccc;
-  position: relative;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.progress-line span {
-  height: 100%;
-  display: block;
-  background: #f9532d;
-  border-radius: 5px;
-  position: relative;
-}
-
-.progress-line span::after{
-    content: attr(data-percent);
-    position: absolute;
-    padding: 1px 8px;
-    background-color: #000;
-    color: #fff;
-    font-size: 12px;
-    border-radius: 3px;
-    top: -28px;
-    /* right: -20px; */
-    /* right: 0;
-    animation: showText 0.5s 1.5s linear forwards;
-    /* opacity: 0; */
-    /* white-space: nowrap;
-/* }  */ 
 .box, .skills, .container, .section {
   overflow: visible !important;
 }
@@ -370,7 +339,7 @@ section{
   height: 10px;
   background: #ddd;
   border-radius: 5px;
-  overflow: visible !important;  /* Forcefully show tooltips */
+  overflow: visible !important; 
 }
 
 .progress-line span {

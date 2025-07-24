@@ -6,15 +6,13 @@ function typeLoop() {
   if (index <= text.length) {
     typed.textContent = text.slice(0, index);
     index++;
-    setTimeout(typeLoop, 200); // speed of typing
+    setTimeout(typeLoop, 200); 
   } else {
     setTimeout(() => {
       typed.textContent = "";
       index = 0;
-      typeLoop(); // restart typing
-    }, 1000); // 1 sec pause before restarting
+      typeLoop();
+    }, 1000); 
   }
 }
-
 typeLoop();
-

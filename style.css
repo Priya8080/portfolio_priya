@@ -331,19 +331,7 @@ section{
     transform-origin: left;
 }
 
-.progress-line span::after {
-  content: attr(data-percent);
-  position: absolute;
-  top: -30px;
-  right: 0;
-  background: #333;
-  color: #fff;
-  font-size: 12px;
-  padding: 3px 6px;
-  border-radius: 4px;
-  white-space: nowrap;
-  z-index: 999;
-}
+
 .progress-line.html span { background: #e34c26; }
 .progress-line.css span { background: #264de4; }
 .progress-line.js span { background: #f7df1e; }

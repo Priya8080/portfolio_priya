@@ -336,7 +336,6 @@ section{
 
 .progress-line span {
   display: block;
-  height: 100%;
 }
 
 .progress-line span::after {

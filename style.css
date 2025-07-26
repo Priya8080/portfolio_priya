@@ -331,9 +331,6 @@ section{
     transform-origin: left;
 }
 
-
-.progress-line.html span { background: #e34c26; }
-.progress-line.css span { background: #264de4; }
 .progress-line.js span { background: #f7df1e; }
 .progress-line.react span { background: #61DBFB; }
 .progress-line.php span { background: #8892be; }

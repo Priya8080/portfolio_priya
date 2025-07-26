@@ -331,13 +331,6 @@ section{
     transform-origin: left;
 }
 
-
-
-
-.progress-line span {
-  display: block;
-}
-
 .progress-line span::after {
   content: attr(data-percent);
   position: absolute;

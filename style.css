@@ -332,13 +332,7 @@ section{
 }
 
 
-.progress-line {
-  position: relative;
-  height: 10px;
-  background: #ddd;
-  border-radius: 5px;
-  overflow: visible !important; 
-}
+
 
 .progress-line span {
   display: block;

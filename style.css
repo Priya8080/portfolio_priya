@@ -330,11 +330,9 @@ section{
     transform: scaleX(0);
     transform-origin: left;
 }
-
-.progress-line.js span { background: #f7df1e; }
-.progress-line.react span { background: #61DBFB; }
+ 
 .progress-line.php span { background: #8892be; }
-.progress-line.java span { background: #f89820; }
+
 
 
 

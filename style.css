@@ -330,9 +330,7 @@ section{
     transform: scaleX(0);
     transform-origin: left;
 }
-.box, .skills, .container, .section {
-  overflow: visible !important;
-}
+
 
 .progress-line {
   position: relative;

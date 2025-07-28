@@ -333,6 +333,9 @@ section{
 .progress-line.html span{
     width: 90%;
 }
+.progress-line.css span{
+    width: 60%;
+}
  
 
 

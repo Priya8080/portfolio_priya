@@ -410,7 +410,28 @@ section{
     margin-bottom: 10px;
     position: relative;
 }
-
+.radial-bars .radial-bar svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 120px;
+    height: 160px;
+}
+.radial-bars .radial-bar .progress-bar{
+    stroke-width: 10;
+    stop-color: black;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+    animation: animate-bar 1s linear forwards;
+}
+@keyframes animate-bar {
+    100%{
+        stroke-dashoffset: -1;
+    }
+}
 
 
 

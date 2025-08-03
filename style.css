@@ -378,6 +378,20 @@ section{
 .progress-line.java span::after{
     content: "55%";
 }
+.progress-line span::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    top: -10px;
+    right: 0;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
 
 
 

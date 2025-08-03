@@ -339,8 +339,20 @@ section{
 .progress-line.js span{
     width: 85%;
 }
-.progress-line.css span{
-    width: 60%;
+.progress-line.react span{
+    width: 50%;
+}
+.progress-line.php span{
+    width: 75%;
+}
+.progress-line.java span{
+    width: 55%;
+}
+.progress-line span::after{
+    position: absolute;
+    padding: 1px  8px;
+    background-color: #000;
+    color: #fff;
 }
 
 

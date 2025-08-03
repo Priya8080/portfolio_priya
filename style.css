@@ -353,7 +353,38 @@ section{
     padding: 1px  8px;
     background-color: #000;
     color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -20px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
 }
+.progress-line.html span::after{
+    content: "90%";
+}
+.progress-line.css span::after{
+    content: "60%";
+}
+.progress-line.js span::after{
+    content: "85%";
+}
+.progress-line.react span::after{
+    content: "50%";
+}
+.progress-line.php span::after{
+    content: "75%";
+}
+.progress-line.java span::after{
+    content: "55%";
+}
+
+
+
+
+
+
+
 
 
 

@@ -505,10 +505,17 @@ section{
     color: #0ef;
 }
 .portfolio-content {
+
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     display: grid;
+    gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(359px, auto));
 }
 .row{
+    margin-left: 2rem;
+    margin-right: 2rem;
     position: relative;
     overflow: hidden;
     border-radius: 8px;

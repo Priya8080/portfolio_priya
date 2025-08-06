@@ -12,11 +12,12 @@ body{
 }
 .header{
     position: fixed;
+    border-bottom: 1px solid #c3ddec;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: #100733;
+    background: #0f0924;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,7 +26,7 @@ body{
 .logo{
     position: relative;
     font-size: 25px;
-    color: #fff;
+    color: #c3ddec;
     text-decoration: none;
     font-weight: 600;
     cursor: default;
@@ -35,7 +36,7 @@ body{
 .navbar a{
     display: inline-block;
     font-size: 25px;
-    color: #fff;
+    color: #c3ddec;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
@@ -52,7 +53,6 @@ body{
     width: 100%;
     justify-content: space-between;
     height: 100vh;
-    background-image: linear-gradient( 177.6deg,  rgba(20,0,113,1) 15.3%, rgba(1,0,62,1) 91.3% );
     background-size: cover;
     background-position: center;
     display: flex;
@@ -111,7 +111,7 @@ body{
 }
 .home-one a:hover{
     background: #0ef;
-    color: #081b29;
+    color: #07021d;
     box-shadow: 0 0 20px #0ef;
 }
 .btn-box{
@@ -120,19 +120,19 @@ body{
     background: #0ef;
     border-radius: 40px;
     font-size: 16px;
-    color: #081b29;
+    color: #07021d;
     letter-spacing: 1px;
     font-weight: 600;
     text-decoration: none;
     opacity: 0;
     animation: slideTop 1s ease forwards;
     animation-delay: 2s;
-    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+    box-shadow: 0 0 5px #34d0ef, 0 0 25px #51d8ed;
 }
 .btn-box:hover{
-    box-shadow: 0 0 5px cyan,
-    0 0 25px cyan, 0 0 50px cyan,
-    0 0 100px cyan, 0 0 200px cyan;
+    box-shadow: 0 0 5px rgb(112, 192, 239),
+    0 0 25px rgb(86, 241, 250), 0 0 50px rgb(81, 219, 237),
+    0 0 100px rgb(123, 233, 241), 0 0 200px rgb(95, 233, 249);
 }
 .about{
     display: grid;
@@ -147,11 +147,11 @@ body{
   border-radius: 50%;
   padding: 10px; 
   margin-left: 3rem;
-  background: linear-gradient(135deg, #0ef, #eb39ce);
+  background: linear-gradient(135deg, #a214cd, #d53dd7);
   box-shadow:
-    0 0 15px #70c5fa,
-    0 0 25px #649fff,
-    0 0 35px rgb(124, 203, 249);
+    0 0 15px #d851fa,
+    0 0 25px #c92cc9,
+    0 0 35px rgb(195, 57, 207);
    display: inline-block; 
 }
 
@@ -170,24 +170,24 @@ body{
     font-size: 60px;
 }
 .about-text h2 span{
-    color: #0ef;
+    color: #d440d4;
 }
 .about-text h4{
     font-size: 29px;
     font-weight: 600;
-    color: #fff;
+    color: #c3ddec;
     line-height: 1.7;
     margin: 15px 0 30px;
 }
 .about-text p{
-    color: aliceblue;
+    color: #ebdcad;
     font-size: 20px;
     line-height: 1.4;
     margin-bottom: 4rem;
 
 }
 #services{
-    color: aliceblue;
+    color: #ebdcad;
     font-size: 20px;
     line-height: 1.4;
     margin-bottom: 4rem;
@@ -198,7 +198,7 @@ body{
     padding-bottom: 70px;
 }
 .sub-title span{
-    color: #0ef;
+    color: #d440d4;
 
 }
 .container{
@@ -218,8 +218,8 @@ body{
     border-right: 10px;
     border-radius: 20px;
     transition: background 0.5s, transform 0.5s;
-    box-shadow: 1px 1px 20px #012290f7,
-                1px 1px 40px #0053b8f7;
+    box-shadow: 1px 1px 20px #d851fa,
+                1px 1px 40px rgb(195, 57, 207);
 }
 .services-list i {
     font-size: 50px;

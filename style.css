@@ -8,7 +8,7 @@
 
 body{
     color: #ededed;
-    background: #081b29;
+    background: #07021d;
 }
 .header{
     position: fixed;
@@ -16,7 +16,7 @@ body{
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: #051129;
+    background: #100733;
     display: flex;
     justify-content: space-between;
     align-items: center;

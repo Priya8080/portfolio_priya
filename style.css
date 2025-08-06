@@ -7,17 +7,20 @@
 }
 
 body{
-    color: #EDF958;
-    background: #1C2B1A;
+    color: #fff;
+    background:  #08021e;;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .header{
     position: fixed;
-    border-bottom: 1px solid #EDF958;
+    border-bottom: 0.1px solid #ffffff38;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: #1C2B1A;
+    background: #08021e;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +29,7 @@ body{
 .logo{
     position: relative;
     font-size: 25px;
-    color: #EDF958;
+    
     text-decoration: none;
     font-weight: 600;
     cursor: default;
@@ -75,7 +78,9 @@ body{
     animation-delay: .7s;
 }
 .home-content h3 span{
-    color: #EDF958;
+  background: linear-gradient(90deg, #00BFFF, #8A2BE2, #1C1C1C); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .home-content h1{
     font-size: 56px;

@@ -1,12 +1,45 @@
-body{
-    background-color: black;
-    color: yellow;
-}
-.navbar{
-    justify-content: space-between;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.left{
-    text-decoration: none;
-    color: yellow;
+body {
+  background: black;
+  color: #e5e7eb;
+}
+.navbar{
+  position: fixed;
+  top: 20px;
+  left: 50px;
+  right: 50px;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgb(10, 242, 68);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: rgb(10, 242, 68) solid 2px ;
+}
+.navbar h2{
+  font-size: 1.8rem;
+}
+.navbar ul{
+  display: flex;
+  gap: 0.7rem;
+  list-style: none;
+}
+.navbar a{
+  text-decoration: none;
+  color: white;
+  font-size: 1 rem;
+  transition: 0.3s ease;
+}
+.navbar a:hover{
+  color:rgb(10, 242, 68);
+  text-shadow: 0 0 5px rgb(10, 242, 68),
+               0 0 10px rgb(10, 242, 68),
+               0 0 20px rgb(10, 242, 68);
 }

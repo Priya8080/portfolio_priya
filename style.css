@@ -346,4 +346,99 @@ body {
   font-size: 0.9rem;
   color: #bbb;
 }
+.contact {
+  padding: 100px 10%;
+  background: #0b0b0b;
+  text-align: center;
+}
 
+.contact-sub {
+  color: #aaa;
+  margin-bottom: 50px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+/* Left Info Card */
+.contact-info {
+  background: rgba(10,242,68,0.06);
+  border: 1px solid rgb(10,242,68);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  text-align: left;
+  box-shadow: 0 0 25px rgba(10,242,68,0.4);
+}
+
+.contact-info h3 {
+  color: rgb(10,242,68);
+  margin-bottom: 10px;
+}
+
+/* Social Icons */
+.contact-socials a {
+  font-size: 1.8rem;
+  color: rgb(10,242,68);
+  margin-right: 15px;
+  transition: 0.3s;
+}
+
+.contact-socials a:hover {
+  color: black;
+  background: rgb(10,242,68);
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgb(10,242,68);
+}
+
+/* Form Card */
+.contact-form {
+  background: rgba(10,242,68,0.06);
+  border: 1px solid rgb(10,242,68);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 25px rgba(10,242,68,0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  border: 1px solid rgb(10,242,68);
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* Button */
+.contact-form button {
+  padding: 12px;
+  background: rgb(10,242,68);
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  box-shadow: 0 0 20px rgb(10,242,68);
+  transform: scale(1.05);
+}

@@ -261,3 +261,89 @@ body {
 .skill-card:hover::before {
   opacity: 1;
 }
+.projects {
+  padding: 100px 10%;
+  background: #0b0b0b;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+/* Project Card */
+.project-card {
+  background: rgba(10,242,68,0.05);
+  border: 1px solid rgb(10,242,68);
+  border-radius: 18px;
+  padding: 18px;
+  transition: 0.4s;
+  box-shadow: 0 0 12px rgba(10,242,68,0.2);
+}
+
+/* Image Box */
+.project-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-img img {
+  width: 100%;
+  transition: 0.4s;
+}
+
+/* Overlay */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.project-overlay a {
+  padding: 10px 22px;
+  border: 1px solid rgb(10,242,68);
+  color: rgb(10,242,68);
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.project-overlay a:hover {
+  background: rgb(10,242,68);
+  color: black;
+}
+
+/* Hover Effects */
+.project-card:hover img {
+  transform: scale(1.15);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 0 35px rgba(10,242,68,0.7);
+}
+
+/* Text */
+.project-card h3 {
+  margin-top: 12px;
+  color: rgb(10,242,68);
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+

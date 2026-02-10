@@ -45,27 +45,24 @@ body {
 }
 .hero-section{
   display: flex;
-  position: absolute;
   justify-content: space-between;
   align-items: center;
   height: 100vh;
-  padding: 0 10%;
+  padding: 50px;
+  margin-top: 4rem;
+  /* padding: 0 10%; */
   
 
 }
 .right{
   display: flex;
   justify-content: space-evenly;
-  position: absolute;
-  top: 10rem;
-  left: 4rem;
+  width: 45vw;
 }
 .left{
   display: flex;
   justify-content: space-evenly;
-  position: absolute;
-  top: 10rem;
-  left: 20rem;
+  width: 45vw;
 }
 .profile-img{
   width: 400px;

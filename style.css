@@ -45,25 +45,26 @@ body {
 }
 .hero-section{
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: 100vh;
-  padding: 50px;
   margin-top: 4rem;
-  /* padding: 0 10%; */
+  padding: 0 10%;
   
 
 }
-.right{
+/* .right{
+  width: 50%;
   display: flex;
-  justify-content: space-evenly;
-  width: 45vw;
+  justify-content: center;
+  align-items: center;
 }
 .left{
+  width: 50%;
   display: flex;
-  justify-content: space-evenly;
-  width: 45vw;
-}
+  justify-content: center;
+  align-items: center;
+} */
 .profile-img{
   width: 400px;
   height: 400px;

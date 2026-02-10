@@ -1,29 +1,33 @@
-const sections = document.querySelectorAll(".section");
-const navLinks = document.querySelectorAll(".nav-links a");
+document.addEventListener("DOMContentLoaded", () => {
+    const text = "Full Stack Developer";
+    const el = document.getElementById("text-typing");
 
-window.addEventListener("scroll", () => {
-  let current = "";
+    let index = 0;
+    let isDeleting = false;
+    let speed = 120;
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 150;
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute("id");
+    function typeLoop() {
+      if (!isDeleting) {
+        el.textContent = text.substring(0, index++);
+        if (index > text.length) {
+          isDeleting = true;
+          speed = 1000; 
+        } else {
+          speed = 120;
+        }
+      } else {
+        el.textContent = text.substring(0, index--);
+        if (index < 0) {
+          isDeleting = false;
+          speed = 500; 
+          index = 0;
+        } else {
+          speed = 70;
+        }
+      }
+      setTimeout(typeLoop, speed);
     }
+
+    typeLoop();
   });
 
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
-});
-
-// Smooth scroll effect
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href"))
-      .scrollIntoView({ behavior: "smooth" });
-  });
-});

@@ -1,28 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const text = "Full Stack Developer";
+    const roles = ["Full Stack Developer", "UI/UX Designer", "Problem Solver", "Web Enthusiast"];
     const el = document.getElementById("text-typing");
 
-    let index = 0;
+    let roleIndex = 0;
+    let charIndex = 0;
     let isDeleting = false;
-    let speed = 120;
+    let speed = 100;
 
     function typeLoop() {
+      const currentRole = roles[roleIndex];
+      
       if (!isDeleting) {
-        el.textContent = text.substring(0, index++);
-        if (index > text.length) {
+        el.textContent = currentRole.substring(0, charIndex++);
+        if (charIndex > currentRole.length) {
           isDeleting = true;
-          speed = 1000; 
+          speed = 2000; // Pause at end
         } else {
-          speed = 120;
+          speed = 100;
         }
       } else {
-        el.textContent = text.substring(0, index--);
-        if (index < 0) {
+        el.textContent = currentRole.substring(0, charIndex--);
+        if (charIndex < 0) {
           isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
           speed = 500; 
-          index = 0;
+          charIndex = 0;
         } else {
-          speed = 70;
+          speed = 50;
         }
       }
       setTimeout(typeLoop, speed);
@@ -30,8 +34,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeLoop();
   });
-document.querySelector(".contact-form").addEventListener("submit", function(e){
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY"); // EmailJS key
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function(e){
   e.preventDefault();
-  alert("Message sent successfully 🚀");
+
+  emailjs.send("service_zgj2blz", "template_v1g7iuc", {
+    name: name.value,
+    email: email.value,
+    message: message.value,
+  }).then(() => {
+    document.getElementById("status-msg").innerText = "Message Sent Successfully ✅";
+
+    // Clear Form
+    this.reset();
+  });
 });
+
 

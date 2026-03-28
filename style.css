@@ -394,7 +394,7 @@ nav {
 /* --- Projects Section --- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -543,7 +543,7 @@ nav {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 3rem;
+    gap: 1.5rem;
   }
   
   .hero-text {
@@ -558,11 +558,11 @@ nav {
   
   .about-grid, .contact-container {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
   
   .hero-text p {
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 1.5rem;
   }
   
   .hero-btns {
@@ -616,8 +616,12 @@ nav {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
   nav {
-    width: 92%;
+    width: calc(100% - 3rem);
     padding: 0.6rem 1.2rem;
     top: 1rem;
   }

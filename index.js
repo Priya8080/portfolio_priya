@@ -79,11 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     reveals.forEach(el => revealOnScroll.observe(el));
 
-    // --- EmailJS Form Handling ---
-    (function(){
-        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual key if needed
-    })();
-
+    // --- Form Handling ---
     const contactForm = document.getElementById("contact-form");
     const statusMsg = document.getElementById("status-msg");
 
@@ -93,38 +89,39 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const name = document.getElementById("name").value.trim();
             const email = document.getElementById("email").value.trim();
-            const phone = document.getElementById("phone").value.trim();
             const message = document.getElementById("message").value.trim();
 
             // Simple Email Regex
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            // Phone Regex (at least 10 digits, permits optional +, spaces, dashes)
-            const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-s\.]?[0-9]{3}[-s\.]?[0-9]{4,6}$/;
 
             if (!emailRegex.test(email)) {
                 showStatus("Please enter a valid email address.", "#dc3545");
                 return;
             }
-
-            if (!phoneRegex.test(phone.replace(/\s/g, ""))) {
-                showStatus("Please enter a valid 10-digit phone number.", "#dc3545");
-                return;
-            }
             
             showStatus("Sending...", "var(--accent-color)");
 
-            emailjs.send("service_zgj2blz", "template_v1g7iuc", {
-                name: name,
-                email: email,
-                phone: phone,
-                message: message,
-            }).then(() => {
+            fetch("https://formsubmit.co/ajax/priya0a23@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
                 showStatus("Message Sent Successfully! ✅", "#28a745");
                 contactForm.reset();
                 setTimeout(() => { statusMsg.innerText = ""; }, 5000);
-            }).catch((err) => {
+            })
+            .catch(error => {
                 showStatus("Failed to send message. Please try again.", "#dc3545");
-                console.error("EmailJS Error:", err);
+                console.error("Error:", error);
             });
         });
 

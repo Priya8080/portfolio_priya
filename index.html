@@ -1,249 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priya Kumari | Full Stack Developer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="navigation-bar" id="home">
-    <nav class="navbar">
-      <h2><a href="#home">Portfolio</a></h2>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Project</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul> 
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">PRIYA.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="hero container" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Welcome to my space</h2>
+                <h1>Hi, I'm Priya Kumari</h1>
+                <div class="typing-container">
+                    <span id="text-typing"></span>
+                </div>
+                <p>An aspiring Full Stack Developer dedicated to building clean, modern, and user-centric web experiences with a focus on premium aesthetics.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="P_CV.pdf" class="btn btn-outline" download>
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <img src="ppriya.png" alt="Priya Kumari">
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="hero-section">
-    <div class="right">
-      <h2>Hello, I'm</h2>
-      <h1>Priya Kumari</h1>
-      <h2>And I'm a <span id="text-typing"></span></h2>
-      <p>Aspiring Full Stack Developer building modern and responsive web applications.</p>
-      <div class="social-icons">
-           <a href="https://github.com/Priya8080" target="_blank">
-               <i class="fab fa-github"></i>
-           </a>
-
-           <a href="https://www.linkedin.com/in/priya-kumari-3500492bb" target="_blank" rel="noopener noreferrer">
-               <i class="fab fa-linkedin"></i>
-           </a>
-           <a href="mailto:priya0a23@gmail.com">
-               <i class="fas fa-envelope"></i>
-           </a>
-           <a href="CV_Priya.pdf" download>
-               <i class="fa-solid fa-download"></i>
-           </a>
-      </div>
-    </div> 
-
-    <div class="left">
-       <img class="profile-img" src="ppriya.png" alt="Priya Kumari - Full Stack Developer">
-    </div>
-  </section>
-   
-  <section class="about-section" id="about">
-    <h1>About Me</h1>
-    <div class="about">
-    <p class="about-text">
-  I'm a <span>web development enthusiast</span> with a strong interest in building 
-  <span>modern, responsive, and interactive</span> web applications. 
-  I enjoy working on both <span>frontend and backend development</span> and love designing 
-  clean and user-friendly interfaces.
-</p>
-<div class="about-stats">
-
-  <div class="stat-box">
-    <i class="fa-solid fa-code"></i>
-    <p>Web Development Enthusiast</p>
-  </div>
-
-  <div class="stat-box">
-    <i class="fa-solid fa-server"></i>
-    <p>Backend Learner</p>
-  </div>
-
-  <div class="stat-box">
-    <i class="fa-solid fa-palette"></i>
-    <p>UI / UX Focused</p>
-  </div>
-
-</div>
-</div>
-  </section>
-
-  <section class="skills" id="skills">
-  <h2 class="section-title">My Skills</h2>
-
-  <div class="skills-grid">
-    <div class="skill-card">
-      <i class="fa-brands fa-python"></i>
-      <h3>Python</h3>
-      <p>Logic building, scripting & backend basics</p>
-    </div>
-
-    <div class="skill-card">
-      <i class="fa-brands fa-java"></i>
-      <h3>Java</h3>
-      <p>OOP concepts & problem solving</p>
-    </div>
-
-    <div class="skill-card">
-      <i class="fa-solid fa-c"></i>
-      <h3>C / C++</h3>
-      <p>DSA & core programming fundamentals</p>
-    </div>
-
-    <div class="skill-card">
-      <i class="fa-solid fa-database"></i>
-      <h3>MySQL</h3>
-      <p>Database design & queries</p>
-    </div>
-    <div class="skill-card">
-      <i class="fa-brands fa-html5"></i>
-      <h3>HTML</h3>
-      <p>Semantic & structured web pages</p>
-    </div>
-
-    <div class="skill-card">
-      <i class="fa-brands fa-css3-alt"></i>
-      <h3>CSS</h3>
-      <p>Responsive layouts & animations</p>
-    </div>
-
-    <div class="skill-card">
-      <i class="fa-brands fa-js"></i>
-      <h3>JavaScript</h3>
-      <p>Interactive & dynamic UI</p>
-    </div>
-
-    <div class="skill-card">
-      <i class="fa-brands fa-react"></i>
-      <h3>React</h3>
-      <p>Component-based frontend apps</p>
-    </div>
-    <div class="skill-card">
-      <i class="fa-brands fa-node-js"></i>
-      <h3>Node.js</h3>
-      <p>Server-side JavaScript runtime</p>
-    </div>
-
-    <div class="skill-card">
-      <i class="fa-solid fa-server"></i>
-      <h3>Express.js</h3>
-      <p>Fast backend APIs & routing</p>
-    </div>
-
-    <div class="skill-card">
-      <i class="fa-solid fa-database"></i>
-      <h3>Databases</h3>
-      <p>MongoDB / Firebase integration</p>
-    </div>
-
-    <div class="skill-card">
-      <i class="fa-solid fa-cloud"></i>
-      <h3>APIs</h3>
-      <p>REST APIs & data integration</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="projects" id="projects">
-  <h2 class="section-title">My Projects</h2>
-
-  <div class="projects-grid">
-
-    <!-- Project Card 1 -->
-    <div class="project-card">
-      <div class="project-img">
-        <img src="calculater.jpeg" alt="Calculator Project">
-        <div class="project-overlay">
-          <a href="https://calcuteme.vercel.app/" target="_blank">View Project</a>
+    <!-- About Section -->
+    <section class="section container reveal" id="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <div class="underline"></div>
         </div>
-      </div>
-      <h3>Calculator App</h3>
-      <p>A modern calculator built using HTML, CSS & JavaScript.</p>
-    </div>
-
-    <!-- Project Card 2 -->
-    <div class="project-card">
-      <div class="project-img">
-        <img src="digital-clock.jpeg" alt="Digital Clock">
-        <div class="project-overlay">
-          <a href="https://digitalclock-flame.vercel.app/" target="_blank">View Project</a>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Designing digital experiences with purpose.</h3>
+                <p>I'm a web development enthusiast with a deep passion for creating modern, responsive, and interactive applications. I bridge the gap between complex backend logic and beautiful frontend design.</p>
+                <p>My approach is minimal, clean, and always focused on the user's experience. I believe every line of code should contribute to a seamless digital journey.</p>
+                <div class="hero-btns" style="margin-top: 2rem;">
+                    <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h4>Frontend</h4>
+                    <p>HTML, CSS, JS, React</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-server"></i>
+                    <h4>Backend</h4>
+                    <p>Node.js, Express, MySQL</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-palette"></i>
+                    <h4>Design</h4>
+                    <p>UI/UX, Animations</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h4>Projects</h4>
+                    <p>10+ Completed</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <h3>Digital Clock</h3>
-      <p>Real-time digital clock with date and neon UI design.</p>
-    </div>
+    </section>
 
-    <!-- Project Card 3 -->
-    <div class="project-card">
-      <div class="project-img">
-        <img src="github-search.jpeg" alt="GitHub Search">
-        <div class="project-overlay">
-          <a href="https://gitusersearch-coral.vercel.app/" target="_blank">View Project</a>
+    <!-- Projects Section -->
+    <section class="section container reveal" id="projects">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <div class="underline"></div>
         </div>
-      </div>
-      <h3>GitHub Profile Search</h3>
-      <p>Search GitHub users using GitHub API with modern UI.</p>
-    </div>
-
-    <!-- Project Card 4 -->
-    <div class="project-card">
-      <div class="project-img">
-        <img src="quiz.jpeg" alt="Quiz App">
-        <div class="project-overlay">
-          <a href="https://responsiveprojects.vercel.app/" target="_blank">View Project</a>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="calculater.jpeg" alt="Calculator App">
+                </div>
+                <div class="project-info">
+                    <h3>Modern Calculator</h3>
+                    <p>A sleek, functional calculator with a premium glassmorphic interface.</p>
+                    <div class="project-links">
+                        <a href="https://calcuteme.vercel.app/" target="_blank" class="project-link">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="digital-clock.jpeg" alt="Digital Clock">
+                </div>
+                <div class="project-info">
+                    <h3>Neon Digital Clock</h3>
+                    <p>Real-time clock with dynamic backgrounds and neon aesthetics.</p>
+                    <div class="project-links">
+                        <a href="https://digitalclock-flame.vercel.app/" target="_blank" class="project-link">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="github-search.jpeg" alt="GitHub Search">
+                </div>
+                <div class="project-info">
+                    <h3>GitHub Navigator</h3>
+                    <p>Utility tool to browse GitHub profiles using the official REST API.</p>
+                    <div class="project-links">
+                        <a href="https://gitusersearch-coral.vercel.app/" target="_blank" class="project-link">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <h3>Quiz App</h3>
-      <p>Interactive quiz app with score system and timer.</p>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- Contact Section -->
+    <section class="section container reveal" id="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's create something amazing together.</h3>
+                <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/Priya8080" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/priya-kumari-3500492bb" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/919661445541" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:priya0a23@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Send Message <i class="fas fa-paper-plane"></i>
+                </button>
+                <p id="status-msg" style="margin-top: 1rem; text-align: center;"></p>
+            </form>
+        </div>
+    </section>
 
-<section class="contact" id="contact">
+    <footer style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+        <p>&copy; 2026 Priya Kumari. Built with <i class="fas fa-heart" style="color: var(--accent-color);"></i> using Vanilla JS.</p>
+    </footer>
 
-  <h2 class="section-title">Let's Connect</h2>
-
-  <div class="contact-container">
-
-    <!-- Contact Form -->
-    <form id="contact-form" class="contact-form">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-
-      <button type="submit">Send Message</button>
-      <p id="status-msg"></p>
-    </form>
-
-    <!-- Social Links -->
-    <div class="social-box">
-      <a href="https://www.linkedin.com/in/priya-kumari-3500492bb" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/Priya8080" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="https://wa.me/919661445541" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="mailto:priya0a23@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-    </div>
-
-  </div>
-
-</section>
-
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script src="index.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
+

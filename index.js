@@ -1,56 +1,185 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const roles = ["Full Stack Developer", "UI/UX Designer", "Problem Solver", "Web Enthusiast"];
-    const el = document.getElementById("text-typing");
+    // --- Theme Toggle ---
+    const themeToggle = document.getElementById("theme-toggle");
+    const html = document.documentElement;
+    const themeIcon = themeToggle.querySelector("i");
 
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let speed = 100;
+    // Check for saved theme
+    const savedTheme = localStorage.getItem("theme") || "light";
+    html.setAttribute("data-theme", savedTheme);
+    updateThemeIcon(savedTheme);
 
-    function typeLoop() {
-      const currentRole = roles[roleIndex];
-      
-      if (!isDeleting) {
-        el.textContent = currentRole.substring(0, charIndex++);
-        if (charIndex > currentRole.length) {
-          isDeleting = true;
-          speed = 2000; // Pause at end
+    themeToggle.addEventListener("click", () => {
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+        if (theme === "dark") {
+            themeIcon.classList.replace("fa-moon", "fa-sun");
         } else {
-          speed = 100;
+            themeIcon.classList.replace("fa-sun", "fa-moon");
         }
-      } else {
-        el.textContent = currentRole.substring(0, charIndex--);
-        if (charIndex < 0) {
-          isDeleting = false;
-          roleIndex = (roleIndex + 1) % roles.length;
-          speed = 500; 
-          charIndex = 0;
-        } else {
-          speed = 50;
-        }
-      }
-      setTimeout(typeLoop, speed);
     }
 
-    typeLoop();
-  });
-(function(){
-  emailjs.init("YOUR_PUBLIC_KEY"); // EmailJS key
-})();
+    // --- Typing Effect ---
+    const roles = ["Full Stack Developer", "UI/UX Designer", "Problem Solver", "Web Enthusiast"];
+    const typingEl = document.getElementById("text-typing");
 
-document.getElementById("contact-form").addEventListener("submit", function(e){
-  e.preventDefault();
+    if (typingEl) {
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let speed = 100;
 
-  emailjs.send("service_zgj2blz", "template_v1g7iuc", {
-    name: name.value,
-    email: email.value,
-    message: message.value,
-  }).then(() => {
-    document.getElementById("status-msg").innerText = "Message Sent Successfully ✅";
+        function typeLoop() {
+            const currentRole = roles[roleIndex];
+            
+            if (!isDeleting) {
+                typingEl.textContent = currentRole.substring(0, charIndex++);
+                if (charIndex > currentRole.length) {
+                    isDeleting = true;
+                    speed = 2000; // Pause at end
+                } else {
+                    speed = 100;
+                }
+            } else {
+                typingEl.textContent = currentRole.substring(0, charIndex--);
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    speed = 500; 
+                    charIndex = 0;
+                } else {
+                    speed = 50;
+                }
+            }
+            setTimeout(typeLoop, speed);
+        }
+        typeLoop();
+    }
 
-    // Clear Form
-    this.reset();
-  });
+    // --- Scroll Reveal ---
+    const reveals = document.querySelectorAll(".reveal");
+
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target); // Reveal only once
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    reveals.forEach(el => revealOnScroll.observe(el));
+
+    // --- EmailJS Form Handling ---
+    (function(){
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual key if needed
+    })();
+
+    const contactForm = document.getElementById("contact-form");
+    const statusMsg = document.getElementById("status-msg");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            // Simple Email Regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            // Phone Regex (at least 10 digits, permits optional +, spaces, dashes)
+            const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-s\.]?[0-9]{3}[-s\.]?[0-9]{4,6}$/;
+
+            if (!emailRegex.test(email)) {
+                showStatus("Please enter a valid email address.", "#dc3545");
+                return;
+            }
+
+            if (!phoneRegex.test(phone.replace(/\s/g, ""))) {
+                showStatus("Please enter a valid 10-digit phone number.", "#dc3545");
+                return;
+            }
+            
+            showStatus("Sending...", "var(--accent-color)");
+
+            emailjs.send("service_zgj2blz", "template_v1g7iuc", {
+                name: name,
+                email: email,
+                phone: phone,
+                message: message,
+            }).then(() => {
+                showStatus("Message Sent Successfully! ✅", "#28a745");
+                contactForm.reset();
+                setTimeout(() => { statusMsg.innerText = ""; }, 5000);
+            }).catch((err) => {
+                showStatus("Failed to send message. Please try again.", "#dc3545");
+                console.error("EmailJS Error:", err);
+            });
+        });
+
+        function showStatus(text, color) {
+            statusMsg.innerText = text;
+            statusMsg.style.color = color;
+        }
+    }
+
+    // --- Mobile Menu Toggle ---
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const navLinks = document.querySelector(".nav-links");
+    const menuIcon = mobileMenuBtn.querySelector("i");
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            
+            // Toggle between bars and xmark icons
+            if (navLinks.classList.contains("active")) {
+                menuIcon.classList.replace("fa-bars", "fa-xmark");
+            } else {
+                menuIcon.classList.replace("fa-xmark", "fa-bars");
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove("active");
+                menuIcon.classList.replace("fa-xmark", "fa-bars");
+            }
+        });
+    }
+
+    // --- Smooth Anchor Scrolling ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            // Close mobile menu when a link is clicked
+            if (navLinks) {
+                navLinks.classList.remove("active");
+                menuIcon.classList.replace("fa-xmark", "fa-bars");
+            }
+
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80, // Adjust for sticky nav
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
 
 

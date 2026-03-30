@@ -81,21 +81,30 @@ ul {
 nav {
   position: fixed;
   top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 90%;
   max-width: 1000px;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   padding: 0.8rem 2rem;
-  border-radius: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+}
+
+nav::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 50px;
   border: 1px solid var(--card-border);
   box-shadow: var(--glass-shadow);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .logo {
@@ -169,7 +178,7 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 120px;
   position: relative;
 }
 
@@ -542,9 +551,9 @@ nav {
 /* --- Responsive Design --- */
 @media (max-width: 968px) {
   .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 1.5rem;
+    grid-template-columns: 1.2fr 1fr;
+    text-align: left;
+    gap: 2rem;
   }
   
   .hero-text {
@@ -553,7 +562,7 @@ nav {
   
   .hero-image {
     order: 2;
-    max-width: 320px;
+    max-width: 100%;
     margin: 0 auto;
   }
   
@@ -563,11 +572,11 @@ nav {
   }
   
   .hero-text p {
-    margin: 0 auto 1.5rem;
+    margin: 0 0 1.5rem;
   }
   
   .hero-btns {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 
@@ -626,21 +635,46 @@ nav {
     padding: 0.6rem 1.2rem;
     top: 1rem;
   }
+
+  .hero-content {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
   
   .hero-text h1 {
-    font-size: 2.8rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-text h2 {
+    font-size: 0.9rem;
+  }
+
+  .hero-text p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-image {
+    max-width: 180px;
   }
 
   .hero-btns {
     flex-direction: column;
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
 
   .btn {
     width: 100%;
     justify-content: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
   }
   
   .section {
@@ -662,16 +696,26 @@ nav {
 }
 
 @media (max-width: 480px) {
+  .hero-content {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
+  }
+
   .hero-image {
-    max-width: 250px;
+    max-width: 130px;
   }
 
   .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
+  }
+
+  .hero-text h2 {
+    font-size: 0.75rem;
   }
 
   .hero-text p {
-    font-size: 1rem;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .section-header h2 {

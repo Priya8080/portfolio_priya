@@ -4,17 +4,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const html = document.documentElement;
     const themeIcon = themeToggle.querySelector("i");
 
-    // Check for saved theme
-    const savedTheme = localStorage.getItem("theme") || "light";
+    // Check for saved theme safely
+    let savedTheme = "light";
+    try {
+        savedTheme = localStorage.getItem("theme") || "light";
+    } catch(e) { /* ignore */ }
     html.setAttribute("data-theme", savedTheme);
     updateThemeIcon(savedTheme);
 
-    themeToggle.addEventListener("click", () => {
+    themeToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
         const currentTheme = html.getAttribute("data-theme");
         const newTheme = currentTheme === "light" ? "dark" : "light";
         
         html.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
+        try {
+            localStorage.setItem("theme", newTheme);
+        } catch(e) { /* ignore */ }
         updateThemeIcon(newTheme);
     });
 
@@ -110,7 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify({
                     name: name,
                     email: email,
-                    message: message
+                    message: message,
+                    _subject: "New Message from " + name
                 })
             })
             .then(response => response.json())
@@ -137,7 +144,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuIcon = mobileMenuBtn.querySelector("i");
 
     if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener("click", () => {
+        mobileMenuBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
             navLinks.classList.toggle("active");
             
             // Toggle between bars and xmark icons
@@ -152,7 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("click", (e) => {
             if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
                 navLinks.classList.remove("active");
-                menuIcon.classList.replace("fa-xmark", "fa-bars");
+                if (menuIcon.classList.contains("fa-xmark")) {
+                    menuIcon.classList.replace("fa-xmark", "fa-bars");
+                }
             }
         });
     }

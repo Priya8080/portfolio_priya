@@ -664,8 +664,8 @@ nav::before {
   
   .hero-image {
     order: -1;
-    width: 65vw;
-    max-width: 250px;
+    width: 80vw;
+    max-width: 320px;
     margin: 0 auto;
   }
 
@@ -677,18 +677,21 @@ nav::before {
   }
   
   .hero-text h1 {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    line-height: 1.25;
   }
 
   .hero-text h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero-text p {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
     max-width: 100%;
+    line-height: 1.6;
   }
 
   .hero-btns {
@@ -707,8 +710,8 @@ nav::before {
   }
   
   .section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .about-text h3 {
@@ -725,26 +728,22 @@ nav::before {
 }
 
 @media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding-top: 80px;
+  }
+
   .hero-content {
     gap: 1.5rem;
   }
 
   .hero-image {
-    max-width: 200px;
-    width: 70vw;
+    max-width: 280px;
+    width: 85vw;
   }
 
   .hero-text h1 {
-    font-size: 1.4rem;
-  }
-
-  .hero-text h2 {
-    font-size: 0.75rem;
-  }
-
-  .hero-text p {
-    font-size: 0.75rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
   }
 
   .section-header h2 {

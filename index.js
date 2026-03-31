@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateThemeIcon(savedTheme);
 
     themeToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
         const currentTheme = html.getAttribute("data-theme");
         const newTheme = currentTheme === "light" ? "dark" : "light";
         
@@ -26,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateThemeIcon(theme) {
         if (theme === "dark") {
-            themeIcon.classList.replace("fa-moon", "fa-sun");
+            themeIcon.className = "fas fa-sun";
         } else {
-            themeIcon.classList.replace("fa-sun", "fa-moon");
+            themeIcon.className = "fas fa-moon";
         }
     }
 
@@ -117,10 +116,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: name,
                     email: email,
                     message: message,
-                    _subject: "New Message from " + name
+                    _subject: "New Message from " + name,
+                    _captcha: "false"
                 })
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
             .then(data => {
                 showStatus("Message Sent Successfully! ✅", "#28a745");
                 contactForm.reset();
@@ -150,9 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
             
             // Toggle between bars and xmark icons
             if (navLinks.classList.contains("active")) {
-                menuIcon.classList.replace("fa-bars", "fa-xmark");
+                menuIcon.className = "fas fa-xmark";
             } else {
-                menuIcon.classList.replace("fa-xmark", "fa-bars");
+                menuIcon.className = "fas fa-bars";
             }
         });
 
@@ -161,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
                 navLinks.classList.remove("active");
                 if (menuIcon.classList.contains("fa-xmark")) {
-                    menuIcon.classList.replace("fa-xmark", "fa-bars");
+                    menuIcon.className = "fas fa-bars";
                 }
             }
         });

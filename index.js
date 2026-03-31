@@ -127,12 +127,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 return response.json();
             })
             .then(data => {
-                showStatus("Message Sent Successfully! ✅", "#28a745");
+                showStatus("Message Sent Successfully! ✅ Check your email.", "#28a745");
                 contactForm.reset();
-                setTimeout(() => { statusMsg.innerText = ""; }, 5000);
+                setTimeout(() => { statusMsg.innerText = ""; }, 8000);
             })
             .catch(error => {
-                showStatus("Failed to send message. Please try again.", "#dc3545");
+                showStatus("Failed to send: " + error.message, "#dc3545");
                 console.error("Error:", error);
             });
         });
